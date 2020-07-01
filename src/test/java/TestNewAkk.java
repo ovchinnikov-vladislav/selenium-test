@@ -30,7 +30,7 @@ public class TestNewAkk {
 
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--disable-notifications");
-        System.setProperty("webdriver.chrome.driver", "C:/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/chromedriver.exe"); // TODO: изменить путь
         driver = new ChromeDriver(ops);
         driver.manage().timeouts().implicitlyWait(210, SECONDS);
         driver.manage().timeouts().pageLoadTimeout(210, SECONDS);
@@ -58,14 +58,12 @@ public class TestNewAkk {
             driver.findElement(By.id("pass_field")).clear();
             driver.findElement(By.id("pass_field")).sendKeys("qwe");
             driver.findElement(By.id("auth_login_field")).click();
-            SECONDS.sleep(2);
             driver.findElement(By.id("login_button")).click();
 
-
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Корзина'])[1]/following::span[6]")));
-            WebElement element001 = driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Корзина'])[1]/following::span[6]"));
-            element001.click();
-            SECONDS.sleep(2);
+//            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Корзина'])[1]/following::span[6]")));
+//            WebElement element001 = driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Корзина'])[1]/following::span[6]"));
+//            element001.click();
+//            SECONDS.sleep(2);
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Москва'])[1]/preceding::img[2]")));
             WebElement element1 = driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Москва'])[1]/preceding::img[2]"));
             element1.click();
